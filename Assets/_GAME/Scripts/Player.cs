@@ -21,6 +21,7 @@ public class Player : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private bool sharpening = false;
     private static Player m_Instance;
     public static Action playerScore;
+    //private Joystick m_Joystick;
 
     private void Awake() => m_Instance = this;
     public static Player Instance => m_Instance;
