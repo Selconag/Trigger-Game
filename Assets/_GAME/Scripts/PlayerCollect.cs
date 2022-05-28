@@ -15,4 +15,9 @@ public class PlayerCollect : MonoBehaviour
         OnArmourCollected.Invoke(this);
         Debug.Log("Total Armour: "+armourAmount);
     }
+
+    public void HitTrap()
+    {
+
+    }
 }
