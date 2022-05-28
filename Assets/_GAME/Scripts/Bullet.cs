@@ -104,7 +104,7 @@ public class Bullet : MonoBehaviour
             else if (hit.transform.gameObject.tag == "Enemy")
                 DecreasePierce = 1;
         }
-    }
+    }   
 
     private void Despawner()
     {
@@ -112,6 +112,7 @@ public class Bullet : MonoBehaviour
         IsInstantiatable = true;
         despawnShield = 0.3f;
         //LeanPool.Despawn(this.gameObject);
+        Destroy(this.gameObject);
     }
 
     IEnumerator SpawnWaiter()
