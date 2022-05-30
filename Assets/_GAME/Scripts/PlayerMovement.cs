@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 moveDirection = Vector3.zero;
 
-    void Start()
+    void Start() 
     {
         characterController = GetComponent<CharacterController>();
     }
@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
             // We are grounded, so recalculate
             // move direction directly from axes
 
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, speed);
             moveDirection *= speed;
 
             if (Input.GetButton("Jump"))

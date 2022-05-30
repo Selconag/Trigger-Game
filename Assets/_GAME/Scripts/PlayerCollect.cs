@@ -8,20 +8,20 @@ public class PlayerCollect : MonoBehaviour
     public int ammoAmount { get; private set; }
 
     public UnityEvent<PlayerCollect> OnArmourCollected;
-    public UnityEvent<PlayerCollect> onAmmoCollected;
+    public UnityEvent<PlayerCollect> OnAmmoCollected;
     
     
     public void CollectArmour()
     {
-        armourAmount+=10;
+        armourAmount+=1;
         OnArmourCollected.Invoke(this);
         Debug.Log("Total Armour: "+armourAmount);
     }
 
     public void CollectAmmo()
     {
-        ammoAmount += 10;
-        onAmmoCollected.Invoke(this);
+        ammoAmount += 5;
+        OnAmmoCollected.Invoke(this);
         Debug.Log("Total Ammo: " + ammoAmount);
     }
 
