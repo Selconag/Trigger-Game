@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: 363069360}
   m_Layer: 0
   m_Name: Player_Root
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -471,21 +471,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onAmmoCollected:
+  OnAmmoCollected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 611093494}
-        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
-        m_MethodName: UpdateAmmoText
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 363069352}
-          m_ObjectArgumentAssemblyTypeName: PlayerCollect, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!4 &363069356
 Transform:
   m_ObjectHideFlags: 0
@@ -533,8 +521,8 @@ MonoBehaviour:
   m_HorizontalMovementSpeed: 12
   m_BoundariesLimit: 4
   rotateSpeed: 5
-  bulletSpawnInterval: 0.2
-  spawnTimer: 0
+  AmmoAmount: 0
+  ArmourAmount: 0
   m_BulletObject: {fileID: 1765931155388544633, guid: 745f79981b029204fb323897d5823e48, type: 3}
   m_BulletSpawnPoint: {fileID: 363069356}
 --- !u!136 &363069359
@@ -1262,6 +1250,7 @@ GameObject:
   - component: {fileID: 999118553}
   - component: {fileID: 999118552}
   - component: {fileID: 999118551}
+  - component: {fileID: 999118554}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1335,6 +1324,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 18.543, y: 0, z: 0}
+--- !u!114 &999118554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999118550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088e3e8b3d5754241903d474707d2945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OffsetToTarget: {x: 0, y: 5, z: -8}
 --- !u!1001 &1082904362
 PrefabInstance:
   m_ObjectHideFlags: 0

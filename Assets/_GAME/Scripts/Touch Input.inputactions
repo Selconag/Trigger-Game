@@ -6,7 +6,7 @@
             "id": "bdb92514-956e-4d30-9beb-dc38800b36a8",
             "actions": [
                 {
-                    "name": "Touch Input",
+                    "name": "Move",
                     "type": "PassThrough",
                     "id": "b13e8328-ba51-4c35-8725-2325c4a69a94",
                     "expectedControlType": "Touch",
@@ -15,10 +15,19 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Mouse Input",
+                    "name": "Jump",
                     "type": "PassThrough",
                     "id": "c1f2e3d1-fa0c-4094-80d9-e0e04b2c8939",
                     "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "11410ceb-430f-417c-9f23-411182216751",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -32,7 +41,7 @@
                     "interactions": "Hold(pressPoint=0.1)",
                     "processors": "",
                     "groups": "",
-                    "action": "Touch Input",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -43,7 +52,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Mouse Input",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff39aa09-1f9c-4de0-93cb-060e042d36cb",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
