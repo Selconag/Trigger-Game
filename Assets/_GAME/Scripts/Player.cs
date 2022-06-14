@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
 		//	this.transform.position = m_NewLocation;
 		//}
 	}
-
+	
 	private void NewMovementSystem(float horizontal)
     {
 		float vertical = Time.deltaTime * m_ForwardMovementSpeed;
@@ -132,7 +132,11 @@ public class Player : MonoBehaviour
 		this.transform.position = m_NewLocation;
 
 	}
+	
+	private void testMovement()
+    {
 
+	}
 	//private void SpawnBullets()
 	//{
 	//	AbilityManager AbilityM = AbilityManager.Instance;

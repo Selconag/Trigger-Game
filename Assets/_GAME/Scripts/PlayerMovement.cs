@@ -9,41 +9,88 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    CharacterController characterController;
-    
-    public float speed = 6.0f;
-    public float jumpSpeed = 8.0f;
-    public float gravity = 20.0f;
+	// If the touch is longer than MAX_SWIPE_TIME, we dont consider it a swipe
+	public const float MAX_SWIPE_TIME = 0.5f;
 
-    private Vector3 moveDirection = Vector3.zero;
+	// Factor of the screen width that we consider a swipe
+	// 0.17 works well for portrait mode 16:9 phone
+	public const float MIN_SWIPE_DISTANCE = 0.17f;
 
-    void Start() 
-    {
-        characterController = GetComponent<CharacterController>();
-    }
+	public static bool swipedRight = false;
+	public static bool swipedLeft = false;
+	public static bool swipedUp = false;
+	public static bool swipedDown = false;
 
-    void Update()
-    {
-        if (characterController.isGrounded)
-        {
-            // We are grounded, so recalculate
-            // move direction directly from axes
 
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, speed);
-            moveDirection *= speed;
+	public bool debugWithArrowKeys = true;
 
-            if (Input.GetButton("Jump"))
-            {
-                moveDirection.y = jumpSpeed;
-            }
-        }
+	Vector2 startPos;
+	float startTime;
 
-        // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
-        // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
-        // as an acceleration (ms^-2)
-        moveDirection.y -= gravity * Time.deltaTime;
+	public void Update()
+	{
+		swipedRight = false;
+		swipedLeft = false;
+		swipedUp = false;
+		swipedDown = false;
 
-        // Move the controller
-        characterController.Move(moveDirection * Time.deltaTime);
-    }
+		if (Input.touches.Length > 0)
+		{
+			Touch t = Input.GetTouch(0);
+			if (t.phase == TouchPhase.Began)
+			{
+				startPos = new Vector2(t.position.x / (float)Screen.width, t.position.y / (float)Screen.width);
+				startTime = Time.time;
+			}
+			if (t.phase == TouchPhase.Ended)
+			{
+				if (Time.time - startTime > MAX_SWIPE_TIME) // press too long
+					return;
+
+				Vector2 endPos = new Vector2(t.position.x / (float)Screen.width, t.position.y / (float)Screen.width);
+
+				Vector2 swipe = new Vector2(endPos.x - startPos.x, endPos.y - startPos.y);
+
+				if (swipe.magnitude < MIN_SWIPE_DISTANCE) // Too short swipe
+					return;
+
+				if (Mathf.Abs(swipe.x) > Mathf.Abs(swipe.y))
+				{ // Horizontal swipe
+					if (swipe.x > 0)
+					{
+						swipedRight = true;
+						Debug.Log("Swiped Right");
+					}
+					else
+					{
+						swipedLeft = true;
+						Debug.Log("Swiped Left");
+					}
+				}
+				else
+				{ // Vertical swipe
+					if (swipe.y > 0)
+					{
+						swipedUp = true;
+						Debug.Log("Swiped Up");
+					}
+					else
+					{
+						swipedDown = true;
+						Debug.Log("Swiped Down");
+					}
+				}
+			}
+		}
+
+		if (debugWithArrowKeys)
+		{
+			swipedDown = swipedDown || Input.GetKeyDown(KeyCode.DownArrow);
+			swipedUp = swipedUp || Input.GetKeyDown(KeyCode.UpArrow);
+			swipedRight = swipedRight || Input.GetKeyDown(KeyCode.RightArrow);
+			swipedLeft = swipedLeft || Input.GetKeyDown(KeyCode.LeftArrow);
+			
+		}
+
+	}
 }
