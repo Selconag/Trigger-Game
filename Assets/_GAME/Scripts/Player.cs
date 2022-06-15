@@ -132,11 +132,6 @@ public class Player : MonoBehaviour
 		this.transform.position = m_NewLocation;
 
 	}
-	
-	private void testMovement()
-    {
-
-	}
 	//private void SpawnBullets()
 	//{
 	//	AbilityManager AbilityM = AbilityManager.Instance;

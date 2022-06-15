@@ -514,6 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7ba7e1c8102084da44ead13b110731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveAmount: 2.5
   debugWithArrowKeys: 1
 --- !u!114 &363069358
 MonoBehaviour:

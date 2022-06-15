@@ -1,11 +1,6 @@
 using UnityEngine;
 using System.Collections;
 
-// This script moves the character controller forward
-// and sideways based on the arrow keys.
-// It also jumps when pressing space.
-// Make sure to attach a character controller to the same game object.
-// It is recommended that you make only one call to Move or SimpleMove per frame.
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
 	// Factor of the screen width that we consider a swipe
 	// 0.17 works well for portrait mode 16:9 phone
 	public const float MIN_SWIPE_DISTANCE = 0.17f;
+
+	[Range(0.0f, 5f)]
+	[SerializeField] public float moveAmount = 2.0f;
 
 	public static bool swipedRight = false;
 	public static bool swipedLeft = false;
@@ -26,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
 
 	Vector2 startPos;
 	float startTime;
+
+
 
 	public void Update()
 	{
@@ -59,12 +59,12 @@ public class PlayerMovement : MonoBehaviour
 					if (swipe.x > 0)
 					{
 						swipedRight = true;
-						Debug.Log("Swiped Right");
+						transform.position += new Vector3(moveAmount, 0, 0);
 					}
 					else
 					{
 						swipedLeft = true;
-						Debug.Log("Swiped Left");
+						transform.position -= new Vector3(moveAmount, 0, 0);
 					}
 				}
 				else
@@ -93,4 +93,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 
 	}
+
+
+
 }
