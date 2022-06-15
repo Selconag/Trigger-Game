@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
 	[Range(0.0f, 5f)]
 	[SerializeField] public float moveAmount = 2.0f;
 
+    [Range(0.0f,10f)]
+	[SerializeField] public float moveSpeed = 2.0f;
+
 	public static bool swipedRight = false;
 	public static bool swipedLeft = false;
 	public static bool swipedUp = false;
@@ -24,10 +27,19 @@ public class PlayerMovement : MonoBehaviour
 
 	Vector2 startPos;
 	float startTime;
+	private int left = 1; private int right = 1;
 
 
+    private void Start()
+    {
+		Debug.Log("Right: " + right + "Left: " + left);
+    }
 
-	public void Update()
+    private void FixedUpdate()
+    {
+		transform.position += new Vector3(0, 0, moveSpeed * Time.deltaTime);
+    }
+    public void Update()
 	{
 		swipedRight = false;
 		swipedLeft = false;
@@ -59,12 +71,29 @@ public class PlayerMovement : MonoBehaviour
 					if (swipe.x > 0)
 					{
 						swipedRight = true;
-						transform.position += new Vector3(moveAmount, 0, 0);
+						
+						
+						if (right < 2)
+						{
+							right++;
+							left--;
+
+							transform.position += new Vector3(moveAmount, 0, 0);
+							Debug.Log("Right: " + right + " Left: " + left);
+						}
 					}
 					else
 					{
 						swipedLeft = true;
-						transform.position -= new Vector3(moveAmount, 0, 0);
+						Debug.Log("Right: " + right + " Left: " + left);
+
+						if (left < 2)
+						{
+							left++; right--;
+							transform.position -= new Vector3(moveAmount, 0, 0);
+							Debug.Log("Right: " + right + " Left: " + left);
+						} 
+
 					}
 				}
 				else
