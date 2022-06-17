@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MobilePostProcessingCameraMaterial
+  m_Shader: {fileID: 4800000, guid: 2de485df1c174d04d85edfe4dea8fc65, type: 3}
+  m_ShaderKeywords: USE_DEPTH_OF_FIELD_SIMPLE USE_DOTTED_GLOW USE_GLOW_SAMPLE_DITHER
+    USE_HDR_COLORS USE_LUT1 USE_POSTERIZE_DITHER USE_SHARPEN USE_SIMPLE_SSAO_DISTANCE_CORRECTION
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailTexture:
+        m_Texture: {fileID: 2800000, guid: 78c3c9f581d64854d8fe9ff53d4dcaf2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LUT1:
+        m_Texture: {fileID: 2800000, guid: f15a09276bbe8ce468038d1e93f0be74, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LUT2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTexture:
+        m_Texture: {fileID: 2800000, guid: 78c3c9f581d64854d8fe9ff53d4dcaf2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EndY: -0.47
+    - _EndZ: 19.9
+    - _FogDensity: 1
+    - _FogTexAnimateSpeed: 2
+    - _FogTexTile: 40
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HeightFogDensity: 1
+    - _LUT1_amount: 1
+    - _LUT2_amount: 0.8
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _SKIP_FOG_FOR_BACKGROUND: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _StartY: 6.89
+    - _StartZ: -4.29
+    - _USE_HDR_FOR_FOG: 0.3333
+    - _UVSec: 0
+    - _ZFogDensity: 1
+    - _ZWrite: 1
+    - _aoAmount: 2
+    - _aoBlend: 1
+    - _aoDistanceFixAmount: 90
+    - _aoGroundBias: 1
+    - _aoRadius: 0.5
+    - _aoStrokesSpread: 1.5
+    - _aoTheshold: 0.1
+    - _aoThreshold: 0.1
+    - _b_brightAmount: 1
+    - _b_contrastAmount: 1
+    - _b_saturate01: 1
+    - _blurRadius: 3.1
+    - _blurSamples_BlurRadius: 1
+    - _blurSamples_DitherSize: 1
+    - _darkBorders: 1
+    - _glowAmount: 0.45
+    - _glowBrightness: 1.53
+    - _glowContrast: 0.7
+    - _glowRadius: 16.9
+    - _glowSamples_BlurRadius: 58.07
+    - _glowSamples_DitherSize: 0.5
+    - _glowTreshold: 0.15
+    - _lutsLevelClipMaxValue: 1
+    - _outlineStrokesBlend: 0
+    - _outlineStrokesScale: 1.77
+    - _posterizationOffsetZeroPoint: 0
+    - _posterizationStepsAmount: 5
+    - _sharpenAmount: 3.92
+    - _sharpenBottomBright_Fast: 0.5
+    - _sharpenBottomBright_Improved: 0
+    - _sharpenDarkPoint: 1
+    - _sharpenSize: 1.4
+    - _spread_AnimateSpeedMulti: 1
+    - _spread_AnimateSpeedMulty: 1
+    - _spread_Variatnt: 0.4
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FogColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
+    - _FogParams: {r: 7.3599997, g: 0.46195647, b: 0, a: -1}
+    - _FogTexTile: {r: 40, g: 40, b: 0, a: 0}
+    - _LUT1_params: {r: 0.0009765625, g: 0.03125, b: 31, a: 0}
+    - _LUT2_params: {r: 0, g: 0, b: 0, a: 0}
+    - _b_colorsAmount: {r: 1, g: 1, b: 1, a: 1}
+    - _blurSamples_BlurRadius: {r: 10, g: 10, b: 5, a: 1}
+    - _glowSamples_BlurRadius: {r: 10, g: 10, b: 0, a: 0}
+    - _outlineStrokesColor: {r: 0.3, g: 0.6, b: 0.9, a: 1}
+    - _posterizationDither: {r: 1.59, g: 0.97, b: 0.93, a: -0.03}
+    - _posterizationStepsAmount: {r: 4.18, g: 5, b: 9.4, a: 1}
+  m_BuildTextureStacks: []
