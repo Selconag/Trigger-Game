@@ -1,0 +1,19 @@
+{
+    "name": "EM.PostProcessing.Editor",
+    "rootNamespace": "EM.PostProcessing.Editor",
+    "references": [
+        "GUID:6370e025abde092468fac8dade68cb1b",
+        "GUID:15fc0a57446b3144c949da3e2b9737a9"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

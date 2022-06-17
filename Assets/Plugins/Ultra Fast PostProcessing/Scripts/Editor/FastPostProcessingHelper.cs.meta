@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 516730ab2ad2ae64e9726fc6f6f8b4aa
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - DEFAULT_LUT: {fileID: 2800000, guid: f15a09276bbe8ce468038d1e93f0be74, type: 3}
+  - DEFAULT_SECOND_LUT: {fileID: 2800000, guid: 744faa3df7e66bf48864749d61f0c0bd,
+      type: 3}
+  - DEFAULT_NOISE: {fileID: 2800000, guid: e89439a7d062fdd4d854fc2bb3316eb5, type: 3}
+  - PATTERN_TEX: {fileID: 2800000, guid: bad46663a7299944c987b8117d84ad8f, type: 3}
+  - _default_urp_asset_2019: {fileID: 11400000, guid: 41f91acad7a5cee4f8fc3911f1c8fab3,
+      type: 2}
+  - _default_urp_data_2019: {fileID: 11400000, guid: c2e706fda06493b4e94318b33eff19db,
+      type: 2}
+  - _default_urp_asset_2021: {fileID: 11400000, guid: 41f91acad7a5cee4f8fc3911f1c8fab3,
+      type: 2}
+  - _default_urp_data_2021: {fileID: 11400000, guid: c2e706fda06493b4e94318b33eff19db,
+      type: 2}
+  - default_profile: {fileID: 11400000, guid: 588b71d068a090f419c40075a9f3401b, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

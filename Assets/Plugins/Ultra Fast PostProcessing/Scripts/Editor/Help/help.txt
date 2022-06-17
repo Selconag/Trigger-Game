@@ -1,0 +1,12 @@
+Hello! This is first beta publication of great post processing asset.                                                       
+
+--
+
+You can find asset here:
+Menu -> Tools -> Ultra Fast Render PostProcessing
+Project -> Plulgins -> Ultra Fast Render PostProcessing
+
+--
+
+If you want more information about how you can use it with camera, open welcome screen from top menu
+If you want more information about how effects work, check screenshots on assetstore page
