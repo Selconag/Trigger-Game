@@ -21,8 +21,11 @@ public class Player : MonoBehaviour
 	[Header("Other Attributes")]
 	[Range(0f, 1f)]
 	[SerializeField] public int AmmoAmount,ArmourAmount;
+	
+	[SerializeField] public bool isAlive;
 
-
+	GameObject _player;
+	GameObject endScreen;
 
 	[SerializeField] private GameObject m_BulletObject;
 	[SerializeField] private Transform m_BulletSpawnPoint;
@@ -61,11 +64,14 @@ public class Player : MonoBehaviour
 		m_Joystick = Joystick.Instance;
 		m_Rigid = GetComponent<Rigidbody>();
 		m_Animator = GetComponent<Animator>();
+		_player = GameObject.FindGameObjectWithTag("Player");
 		//m_BulletPool = GameObject.Find("BulletPool").transform;
 	}
 
 	void FixedUpdate()
 	{
+		endScreen.SetActive(!_player.activeInHierarchy);
+
 		//if (m_BulletPool == null) m_BulletPool = GameObject.Find("BulletPool").transform;
 		if ((Input.touchCount > 0 || Input.GetMouseButton(0)) && !gameStarted) gameStarted = true;
 		if (!gameStarted) return;
@@ -132,6 +138,14 @@ public class Player : MonoBehaviour
 		this.transform.position = m_NewLocation;
 
 	}
+
+	private void isKilled()
+    {
+		if(!isAlive)
+        {
+			Destroy(this);
+        }
+    }
 	//private void SpawnBullets()
 	//{
 	//	AbilityManager AbilityM = AbilityManager.Instance;
