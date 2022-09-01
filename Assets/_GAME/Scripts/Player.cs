@@ -70,48 +70,48 @@ public class Player : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		endScreen.SetActive(!_player.activeInHierarchy);
+		//endScreen.SetActive(!_player.activeInHierarchy);
 
 		//if (m_BulletPool == null) m_BulletPool = GameObject.Find("BulletPool").transform;
 		if ((Input.touchCount > 0 || Input.GetMouseButton(0)) && !gameStarted) gameStarted = true;
 		if (!gameStarted) return;
 
 
-		if (Input.touchCount > 0 || Input.GetMouseButton(0) && fingerRelease)
-		{
-			fingerRelease = false;
+        //if (Input.touchCount > 0 || Input.GetMouseButton(0) && fingerRelease)
+        //{
+        //	fingerRelease = false;
 
-			if (m_Joystick.Horizontal > 0.6f || m_Joystick.Horizontal < -0.6f)
-            {
-				NewMovementSystem(m_Joystick.Horizontal);
-			}
-		}
+        //	if (m_Joystick.Horizontal > 0.6f || m_Joystick.Horizontal < -0.6f)
+        //          {
+        //		NewMovementSystem(m_Joystick.Horizontal);
+        //	}
+        //}
+        //      else
+        //      {
+        //	fingerRelease = true;
+        //	float vertical = Time.deltaTime * m_ForwardMovementSpeed;
+        //	Vector3 m_NewLocation = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z + vertical);
+        //	this.transform.position = m_NewLocation;
+        //}
+
+        //REMOVED PART
+        if (Input.touchCount > 0 || Input.GetMouseButton(0))
+        {
+            float horizontal = m_Joystick.Horizontal * Time.deltaTime * m_HorizontalMovementSpeed;
+            float vertical = Time.deltaTime * m_ForwardMovementSpeed;
+            Vector3 m_NewLocation = new Vector3(
+                Mathf.Clamp(this.gameObject.transform.position.x + horizontal, -m_BoundariesLimit, m_BoundariesLimit),
+                this.gameObject.transform.position.y,
+                this.gameObject.transform.position.z + vertical);
+            this.transform.position = m_NewLocation;
+        }
         else
         {
-			fingerRelease = true;
-			float vertical = Time.deltaTime * m_ForwardMovementSpeed;
-			Vector3 m_NewLocation = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z + vertical);
-			this.transform.position = m_NewLocation;
-		}
-
-		////REMOVED PART
-		//if (Input.touchCount > 0 || Input.GetMouseButton(0))
-		//{
-		//	float horizontal = m_Joystick.Horizontal * Time.deltaTime * m_HorizontalMovementSpeed;
-		//	float vertical = Time.deltaTime * m_ForwardMovementSpeed;
-		//	Vector3 m_NewLocation = new Vector3(
-		//		Mathf.Clamp(this.gameObject.transform.position.x + horizontal, -m_BoundariesLimit, m_BoundariesLimit),
-		//		this.gameObject.transform.position.y,
-		//		this.gameObject.transform.position.z + vertical);
-		//	this.transform.position = m_NewLocation;
-		//}
-		//else
-		//{
-		//	float vertical = Time.deltaTime * m_ForwardMovementSpeed;
-		//	Vector3 m_NewLocation = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z + vertical);
-		//	this.transform.position = m_NewLocation;
-		//}
-	}
+            float vertical = Time.deltaTime * m_ForwardMovementSpeed;
+            Vector3 m_NewLocation = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z + vertical);
+            this.transform.position = m_NewLocation;
+        }
+    }
 	
 	private void NewMovementSystem(float horizontal)
     {
